@@ -1,0 +1,22 @@
+<% if params[:controller] == 'about' %>
+<div class="well">
+    <h3>Location Info</h3>
+    <ul>
+        <li>The Bookstore</li>
+        <li>49 Massachusetts, Unit 2</li>
+        <li>Boston, MA 02210</li>
+        <li>Phone: 098.465.3805</li>
+        <li>Email: support@thebookstore.com</li>
+    </ul>
+</div>
+<% end %>
+
+<% if user_signed_in? %>
+  <% if @categories.present? %>
+    <div class="list-group">
+      <% @categories.each do |category|  %>
+        <%= link_to category.name, category_path(category), class:'list-group-item' %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
