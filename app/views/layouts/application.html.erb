@@ -26,6 +26,10 @@
             <% if user_signed_in? %>
               <li class=""><%= link_to 'Home', root_path %></li>
               <li class=""><%= link_to 'About', about_path %></li>
+              <li class=""><%= link_to 'Book', books_path %></li>
+              <li class=""><%= link_to 'Category', categories_path %></li>
+              <li class=""><%= link_to 'Publisher', publishers_path %></li>
+              <li class=""><%= link_to 'Author', authors_path %></li>
             <% end %>
           </ul>
           
