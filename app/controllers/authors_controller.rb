@@ -18,18 +18,28 @@ class AuthorsController < ApplicationController
   end
 
   def update
+    @author = Author.find params[:id]
+    if @author.update(author_params)
+      flash[:notice] = "Author updated."
+      redirect_to authors_path
+    else
+      render 'edit'
+    end
   end
 
   def edit
+    @author = Author.find params[:id]
   end
 
   def destroy
   end
 
   def index
+    @authors = Author.all
   end
 
   def show
+    @author = Author.find params[:id]
   end
   
   private

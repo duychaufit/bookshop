@@ -16,9 +16,17 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    @category = Category.find params[:id]
+    if @category.update(category_params)
+      flash[:notice] = "Category updated."
+      redirect_to categories_path
+    else
+      render 'edit'
+    end
   end
 
   def edit
+    @category = Category.find params[:id]
   end
 
   def destroy

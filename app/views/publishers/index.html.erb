@@ -1,2 +1,8 @@
-<h1>Publishers#index</h1>
-<p>Find me in app/views/publishers/index.html.erb</p>
+<h2>Publisher list</h2>
+<% if @publishers.present? %>
+<div class="list-group">
+  <% @publishers.each do |publisher|  %>
+    <%= link_to publisher.name, publisher_path(publisher), class:'list-group-item' %>
+  <% end %>
+</div>
+<% end %>

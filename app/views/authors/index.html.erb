@@ -1,2 +1,8 @@
-<h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+<h2>Author list</h2>
+<% if @authors.present? %>
+<div class="list-group">
+  <% @authors.each do |author|  %>
+    <%= link_to author.first_name + " " + author.last_name , author_path(author), class:'list-group-item' %>
+  <% end %>
+</div>
+<% end %>
